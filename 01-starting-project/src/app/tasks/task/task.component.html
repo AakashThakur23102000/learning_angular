@@ -1,0 +1,8 @@
+<article>
+    <h2>{{taskObj?.title}}</h2>
+    <time>{{taskObj?.dueDate}}</time>
+    <p>{{taskObj?.summary}}</p>
+    <p class="actions">
+        <button (click)="completeButtonClickHandler()">Complete</button>
+    </p>
+</article>

@@ -1,0 +1,25 @@
+@if (selectedUser){
+@if (viewAddModal()) {
+<app-new-task (addTaskCloseEventEmitter)="onAddTaskClose()" />
+}
+<section id="tasks">
+
+    <header>
+        <h2> {{selectedUser.name}}'s Tasks</h2>
+    </header>
+    <menu>
+        <button (click)="onAddTaskOpen()">Add Task</button>
+    </menu>
+
+    <ul>
+        @for (item of getUserSpecificTasksArr; track item.id) {
+        <li>
+            <app-task [taskObj]="item" (deleteEventFromChildToParent)="deleteCompletedTask($event)" />
+        </li>
+        }
+    </ul>
+
+</section>
+}@else {
+<p id="fallback">Select a user to see there task!</p>
+}

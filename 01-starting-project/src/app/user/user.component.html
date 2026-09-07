@@ -1,6 +1,6 @@
 <div>
-    <button>
-        <img />
-        <span>NAME</span>
+    <button [class.active]="selectedUserId===id" (click)=" onUserSelect()">
+        <img [src]="'../../assets/users/'+avatar" alt="name" />
+        <span>{{name}}</span>
     </button>
 </div>

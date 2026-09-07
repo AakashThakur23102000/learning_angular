@@ -1,9 +1,13 @@
 <app-header />
 
 <main>
-    <ul id="users"> 
+    <ul id="users">
+        @for (item of dummyUser(); track item.id) {
         <li>
-            <app-user />
+            <app-user [id]="item.id" [avatar]="item.avatar" [name]="item.name"
+                (userSelect)="handleChildUserSelect($event)" [selectedUserId]="selectedUserId()" />
         </li>
+        }
     </ul>
+    <app-tasks [currentUserId]="selectedUserId()" />
 </main>
