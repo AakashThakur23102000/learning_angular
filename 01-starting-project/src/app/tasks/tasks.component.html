@@ -1,6 +1,7 @@
 @if (selectedUser){
 @if (viewAddModal()) {
-<app-new-task (addTaskCloseEventEmitter)="onAddTaskClose()" />
+<app-new-task (addTaskCloseEventEmitter)="onAddTaskClose()"
+    (addFormSubmitSendValuesToParent)="onAddTaskModalSubmit($event)" />
 }
 <section id="tasks">
 
